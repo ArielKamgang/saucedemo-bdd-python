@@ -1,0 +1,6 @@
+.venv/
+__pycahe__/
+reports/
+*.pyc 
+.idea/
+.vscode/
