@@ -1,5 +1,5 @@
 """Hookd behave : executés automatiquement autour des scénarios."""
-from pages.inventory_page import InventoryPage 
+from pages.inventory_page import InventoryPage
 from pages.login_page import LoginPage
 from utils.driver_factory import create_driver
 

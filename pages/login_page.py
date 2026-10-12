@@ -1,4 +1,4 @@
-from selenium.webdriver.common.by import By 
+from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 from utils.config import BASE_URL
 
@@ -18,4 +18,3 @@ class LoginPage(BasePage): #LOGINPage Hèrite de BasePage
         self.click(self.LOGIN_BUTTON)
     def error_message(self):
         return self.get_text(self.ERROR_MESSAGE)
-    

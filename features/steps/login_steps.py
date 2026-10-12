@@ -1,5 +1,5 @@
 """Steps du login : chaque @given/@when/@then correspond à une phrase Gherkin."""
-from behave import given, then, when 
+from behave import given, then, when
 
 
 import utils.step_types # noqa: F401(active le type{..:Text})
@@ -17,7 +17,7 @@ def step_products_page(context):
     assert context.inventory_page.is_loaded(), \
         f"Page produits attendue, URL actuelle : {context.driver.current_url}"
 
-@then('I should see the login error "{message}"') 
+@then('I should see the login error "{message}"')
 def step_login_error(context,message):
     actual = context.login_page.error_message()
     assert actual == message, f"Attendu : '{message}' | Obtenu : '{actual}' "

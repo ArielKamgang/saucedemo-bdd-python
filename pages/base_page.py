@@ -15,21 +15,21 @@ class BasePage:
               ignored_exceptions=[StaleElementReferenceException,
                                   ElementClickInterceptedException])
     def find (self, locator) :
-        """attend qu'element soit visible pius le renvoie""" 
-        return self.wait.until(EC.visibility_of_element_located(locator)) 
+        """attend qu'element soit visible pius le renvoie"""
+        return self.wait.until(EC.visibility_of_element_located(locator))
     def find_all(self,locator) :
         """attend qu au moins un élement existe, puis renvoie la liste"""
         self.wait.until(EC.presence_of_all_elements_located(locator))
-        return self.driver.find_elements(*locator)   
+        return self.driver.find_elements(*locator)
     def click (self,locator) :
         """Clique des que l'élement est cliquable (réessaie si besoin) """
         def _click(driver):
-            element = EC.element_to_be_clickable(locator)(driver) 
+            element = EC.element_to_be_clickable(locator)(driver)
             if element:
                 element.click()
                 return True
             return False
-        self.wait.until(_click)      
+        self.wait.until(_click)
     def type(self,locator,text):
         """Vide le champ puis tape le texte"""
         element = self.find(locator)
@@ -37,7 +37,7 @@ class BasePage:
         element.send_keys(text)
     def get_text(self,locator):
         return self.find(locator).text
-    
+
     def is_displayed(self,locator):
         try:
             return self.find(locator).is_displayed()

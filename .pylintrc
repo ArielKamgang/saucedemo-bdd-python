@@ -1,0 +1,6 @@
+[Messages Control]
+disable= 
+not-collable,
+missing-module-docstring,
+missing-class-docstring,
+missing-function-docstring

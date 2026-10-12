@@ -12,7 +12,7 @@ def test_login_ok():
         inventory_page = InventoryPage(driver)
         assert inventory_page.is_loaded(), "La page Products n'est pas affichée"
         print(f"Test OK : login réussi, {inventory_page.product_count()} produit affichés")
-    finally : 
+    finally :
         driver.quit()
 
 def test_login_wrong_password():
@@ -24,8 +24,8 @@ def test_login_wrong_password():
         message = login_page.error_message()
         assert "do not match" in message, f"Message inattendu : {message}"
         print("TEST OK : mauvais mot de passe refusé")
-    finally : 
-        driver.quit()     
+    finally :
+        driver.quit()
 
 if __name__ == "__main__":
     test_login_ok()

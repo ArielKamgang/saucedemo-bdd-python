@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
-#1 ouvrir 
+#1 ouvrir
 driver = webdriver.Chrome()
 
 try :
@@ -21,7 +21,7 @@ try :
     #6 Verifier
     assert title.text == "Products", f"Titre inattendu : {title.text}"
     print("Test OK : connection reussi")
-   
+
 
 finally:
     #7 toujours fermer le navigateur meme s il echoue
