@@ -6,7 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from utils.config import DEFAULT_TIMEOUT
 
 class BasePage:
-    """ class principale utilisé par toute les autres classe"""
+    """ Base class shared by all page objects."""
     def __init__(self,driver):
         self.driver = driver
         #Ignore les elements "stale"(page re-dessinée) et réessaie
