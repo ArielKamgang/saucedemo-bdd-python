@@ -1,5 +1,5 @@
 @regression @login
-Feature: Login 
+Feature: Login
     As a customer of the webshop
     I want to log in with my account
     so that I can see the products
@@ -7,7 +7,7 @@ Feature: Login
     Background:
         Given I am on the login page
 
-    @smoke 
+    @smoke
     Scenario: Successful login with a standard user
         when I log in as "standard_user" with password "secret_sauce"
         Then I should see the products page
@@ -22,4 +22,8 @@ Feature: Login
             | standard_user   | wrong_pass    | Epic sadface: Username and password do not match any user in this service  |
             |                 | secret_sauce  | Epic sadface: Username is required                                         |
             |standard_user    |               | Epic sadface: Password is required                                         |
-            
+
+    Scenario: Products page cannot be opened without login
+        when I open the products page directly
+        then I should see the login error "Epic sadface: You can only access '/inventory.html' when you are logged in."
+

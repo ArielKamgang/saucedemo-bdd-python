@@ -21,3 +21,12 @@ def step_products_page(context):
 def step_login_error(context,message):
     actual = context.login_page.error_message()
     assert actual == message, f"Attendu : '{message}' | Obtenu : '{actual}' "
+
+@when("I open the products page directly")
+def step_login_directly_error(context):
+    context.driver.get("https://www.saucedemo.com/inventory.html")
+
+@then('I should see the login error "Epic sadface: You can only access "/inventory.htlm" when you are logged in." ')
+def step_login_error(context,message):
+    actual = context.login_page.error_message()
+    assert actual == message, f"Attendu : '{message}' | Obtenu : '{actual}' "
